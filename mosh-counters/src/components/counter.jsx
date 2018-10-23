@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0
+    //props is a plain JS object that includes all attributes of an object
+    value: this.props.value
   };
 
   // constructor() {
@@ -14,7 +15,7 @@ class Counter extends Component {
   //arrow function instead of constructor; inherits 'this'
   handleIncrement = product => {
     console.log(product);
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ value: this.state.value + 1 });
   };
 
   render() {
