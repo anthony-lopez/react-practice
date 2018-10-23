@@ -19,14 +19,23 @@ class Counter extends Component {
   };
 
   render() {
+    console.log(this.props);
+
     return (
       <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <span className={this.getBadgeClasses()}>{this.formatValue()}</span>
         <button
           onClick={product => this.handleIncrement(product)}
           className="btn btn-secondary btn-sm"
         >
           Increment
+        </button>
+        <button
+          //raise event
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
         </button>
       </div>
     );
@@ -34,15 +43,15 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   }
 
-  formatCount() {
+  formatValue() {
     //Object Destructuring
-    const { count } = this.state;
+    const { value } = this.state;
     //could also use <h1>Zero</h1>
-    return count === 0 ? "Zero" : count;
+    return value === 0 ? "Zero" : value;
   }
 }
 
