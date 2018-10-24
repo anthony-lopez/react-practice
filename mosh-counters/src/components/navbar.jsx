@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
 // Stateless Functional Component
-const NavBar = props => {
+const NavBar = ({ totalCounters }) => {
   return (
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand" href="#">
         Navbar{" "}
-        <span className="bade badge-pill badge-secondary">
-          {props.totalCounters}
-        </span>
+        <span className="bade badge-pill badge-secondary">{totalCounters}</span>
       </a>
     </nav>
   );
